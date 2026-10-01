@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "本班",
+  "usingComponents": {
+    "role-tabbar": "/components/role-tabbar/role-tabbar",
+    "stat-grid": "/components/stat-grid/stat-grid",
+    "student-row": "/components/student-row/student-row"
+  }
+}

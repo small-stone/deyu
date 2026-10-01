@@ -1,0 +1,12 @@
+<view class="list-item" bindtap="onTap">
+  <view class="avatar {{tone}}">{{initial}}</view>
+  <view class="mid">
+    <view class="name">{{name}}</view>
+    <view class="meta-t" wx:if="{{meta}}">{{meta}}</view>
+  </view>
+  <view class="hl-pair" wx:if="{{showHl}}">
+    <view><text class="hl-label">最高</text><text class="hl-hi">{{high}}</text></view>
+    <view><text class="hl-label">最低</text><text class="hl-lo">{{low}}</text></view>
+  </view>
+  <view class="score {{score < 40 ? 'lo' : ''}}" wx:else>{{score}}</view>
+</view>

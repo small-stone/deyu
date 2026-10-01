@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "绑定孩子",
+  "usingComponents": {
+    "role-tabbar": "/components/role-tabbar/role-tabbar"
+  }
+}

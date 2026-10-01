@@ -1,0 +1,52 @@
+<view class="page">
+  <view class="nav-row">
+    <view>
+      <view class="nav-title">全校排名</view>
+      <view class="sub">{{school.yearLabel}} · {{school.classCount}} 个班 · {{school.studentCount}} 人</view>
+    </view>
+    <view class="avatar gold">管</view>
+  </view>
+
+  <view class="seg">
+    <view class="seg-item {{dim === 'class' ? 'on' : ''}}" data-dim="class" bindtap="setDim">班级平均分</view>
+    <view class="seg-item {{dim === 'person' ? 'on' : ''}}" data-dim="person" bindtap="setDim">个人分数</view>
+  </view>
+
+  <stat-grid items="{{stats}}" />
+
+  <view class="card" style="margin:20rpx 0">
+    <view class="dist-head">
+      <view class="section-title">全校分数分布</view>
+      <view class="sub">按学生人数</view>
+    </view>
+    <view class="dist-bars">
+      <view class="col {{item.low ? 'low' : ''}}" wx:for="{{distribution}}" wx:key="label">
+        <view class="cnt">{{item.count}}人</view>
+        <view class="b" style="height: {{item.height * 2}}rpx"></view>
+        <view class="lbl">{{item.label}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="seg" wx:if="{{dim === 'person'}}">
+    <view class="seg-item {{listMode === 'high' ? 'on' : ''}}" data-mode="high" bindtap="setListMode">高分榜</view>
+    <view class="seg-item {{listMode === 'low' ? 'on' : ''}}" data-mode="low" bindtap="setListMode">低分关注</view>
+  </view>
+
+  <view class="section-h" wx:if="{{dim === 'class'}}">
+    <view class="section-title">{{listTitle}}</view>
+    <text class="more">从高到低</text>
+  </view>
+
+  <view class="card">
+    <view class="rank-row" wx:for="{{list}}" wx:key="name">
+      <view class="medal {{item.rank === 1 ? 'm1' : (item.rank === 2 ? 'm2' : (item.rank === 3 ? 'm3' : ''))}}">{{item.rank}}</view>
+      <view class="bar-wrap">
+        <view class="nm"><text>{{item.name}}</text><strong>{{item.score}}</strong></view>
+        <view class="bar"><view class="fill" style="width: {{item.width}}%"></view></view>
+      </view>
+    </view>
+  </view>
+
+  <role-tabbar role="admin" active="rank" />
+</view>

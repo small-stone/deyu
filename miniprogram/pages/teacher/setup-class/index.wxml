@@ -1,0 +1,23 @@
+<view class="page no-tab">
+  <view class="nav-row">
+    <view>
+      <view class="nav-title">创建班级</view>
+      <view class="sub">李老师 · 班主任</view>
+    </view>
+    <view class="avatar">李</view>
+  </view>
+
+  <view class="card hero">
+    <view class="emoji">🏫</view>
+    <view class="t">开始管理你的班级</view>
+    <view class="d">填写班级编号后即可上传花名册，开始记录德育分。</view>
+  </view>
+
+  <view class="field">
+    <label>班级编号</label>
+    <input class="input big" value="{{className}}" bindinput="onInput" placeholder="如 352" />
+  </view>
+
+  <view class="btn btn-primary" bindtap="submit">创建班级</view>
+  <view class="hint">示例：351、352、353</view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "花名册",
+  "usingComponents": {
+    "role-tabbar": "/components/role-tabbar/role-tabbar",
+    "student-row": "/components/student-row/student-row"
+  }
+}

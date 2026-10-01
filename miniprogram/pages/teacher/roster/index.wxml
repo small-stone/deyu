@@ -1,0 +1,32 @@
+<view class="page">
+  <view class="back" bindtap="back">‹ 本班</view>
+  <view class="nav-row">
+    <view class="nav-title">花名册</view>
+    <view class="add">＋ 新增</view>
+  </view>
+
+  <view class="upload-zone" bindtap="importDemo">
+    <view class="t1">上传 Excel / CSV</view>
+    <view class="t2">下载标准模板后再导入（演示可点此刷新）</view>
+  </view>
+
+  <view class="search">
+    <input placeholder="搜索姓名 / 学号" value="{{keyword}}" bindinput="onSearch" />
+  </view>
+
+  <view class="card pad">
+    <student-row
+      wx:for="{{students}}"
+      wx:key="id"
+      name="{{item.name}}"
+      meta="学号 {{item.studentNo}}"
+      score="{{item.score}}"
+      tone="{{item.score < 40 ? 'coral' : (item.score >= 90 ? 'sky' : '')}}"
+      data-id="{{item.id}}"
+      bind:tap="openScore"
+    />
+    <view wx:if="{{!students.length}}" class="empty">暂无匹配学生</view>
+  </view>
+
+  <role-tabbar role="teacher" active="students" />
+</view>

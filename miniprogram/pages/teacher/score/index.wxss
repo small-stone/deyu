@@ -1,0 +1,40 @@
+.head {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  margin-bottom: 28rpx;
+  padding: 28rpx;
+}
+
+.mid {
+  flex: 1;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 30rpx;
+}
+
+.meta-t {
+  font-size: 22rpx;
+  color: rgba(27, 46, 42, 0.45);
+  margin-top: 4rpx;
+}
+
+.amount {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #0E8F7A;
+}
+
+.tag-label {
+  font-size: 24rpx;
+  color: rgba(27, 46, 42, 0.35);
+  margin-bottom: 12rpx;
+  font-weight: 500;
+}
+
+.float-badge {
+  background: #DDF4EE;
+  color: #0A6B5C;
+}

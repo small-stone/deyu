@@ -1,0 +1,3 @@
+<!--pages/user/index.wxml-->
+<text>pages/user/index.wxml</text>
+<view class="btn-full" bind:tap="getOpenId">运行示例</view>

@@ -1,0 +1,16 @@
+<view class="page no-tab" wx:if="{{child}}">
+  <view class="back" bindtap="back">‹ 返回</view>
+  <view class="card head">
+    <view class="avatar">{{child.name[0]}}</view>
+    <view class="mid">
+      <view class="name">{{child.name}}</view>
+      <view class="meta-t">{{className}} · 学号 {{child.studentNo}}</view>
+    </view>
+    <view class="score-big">{{child.score}}</view>
+  </view>
+
+  <view class="section-h">
+    <view class="section-title">加减分记录</view>
+  </view>
+  <timeline-list items="{{logs}}" />
+</view>

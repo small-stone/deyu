@@ -1,0 +1,10 @@
+.hint {
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 22rpx;
+  color: rgba(27, 46, 42, 0.35);
+}
+
+.desc {
+  white-space: pre-line;
+}

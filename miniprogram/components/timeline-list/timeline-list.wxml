@@ -1,0 +1,9 @@
+<view class="timeline">
+  <view class="tl-item" wx:for="{{items}}" wx:key="id">
+    <view class="tl-dot {{item.delta >= 0 ? 'up' : 'down'}}">{{item.delta >= 0 ? '+' : ''}}{{item.delta}}</view>
+    <view class="tl-body">
+      <view class="reason">{{item.reason}}</view>
+      <view class="when">{{item.when}} · {{item.operatorName}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+.intro {
+  font-size: 26rpx;
+  color: rgba(27, 46, 42, 0.55);
+  line-height: 1.55;
+  margin-bottom: 36rpx;
+}
+
+.tip .name {
+  font-weight: 700;
+  margin-bottom: 8rpx;
+}
+
+.meta-t {
+  font-size: 24rpx;
+  color: rgba(27, 46, 42, 0.45);
+  line-height: 1.5;
+}

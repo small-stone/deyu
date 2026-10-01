@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "全校总览",
+  "usingComponents": {
+    "role-tabbar": "/components/role-tabbar/role-tabbar",
+    "student-row": "/components/student-row/student-row"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "deyu",
+  "version": "1.0.0",
+  "description": "微信小程序：学生德育分数管理（云开发）。",
+  "main": ".eslintrc.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "capture:mockups": "node designs/capture-mockups.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

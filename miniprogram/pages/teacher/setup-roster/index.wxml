@@ -1,0 +1,23 @@
+<view class="page no-tab">
+  <view class="nav-row">
+    <view>
+      <view class="nav-title">上传花名册</view>
+      <view class="sub">班级 {{className}} · 暂无学生</view>
+    </view>
+    <view class="avatar">李</view>
+  </view>
+
+  <view class="card center">
+    <view class="badge">{{className}}</view>
+    <view class="t">导入学生后即可加减分</view>
+    <view class="d">支持 Excel / CSV，或演示一键导入示例花名册。</view>
+  </view>
+
+  <view class="upload-zone" bindtap="importDemo">
+    <view class="t1">上传 Excel / CSV</view>
+    <view class="t2">演示：点击导入设计稿示例学生</view>
+  </view>
+
+  <view class="btn btn-primary" bindtap="importDemo">演示导入花名册</view>
+  <view class="btn btn-ghost" style="margin-top:20rpx" bindtap="skip">暂时跳过</view>
+</view>

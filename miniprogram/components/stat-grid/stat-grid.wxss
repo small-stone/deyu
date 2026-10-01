@@ -1,0 +1,44 @@
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+  margin-bottom: 8rpx;
+}
+
+.stat {
+  background: #fff;
+  border: 1rpx solid rgba(14, 143, 122, 0.12);
+  border-radius: 28rpx;
+  padding: 22rpx;
+  box-shadow: 0 8rpx 24rpx rgba(14, 143, 122, 0.06);
+}
+
+.stat .k {
+  font-size: 22rpx;
+  color: rgba(27, 46, 42, 0.45);
+  font-weight: 600;
+}
+
+.stat .v {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-top: 8rpx;
+  color: #1B2E2A;
+  letter-spacing: -1rpx;
+}
+
+.stat .v.hi,
+.stat.hi .v {
+  color: #0E8F7A;
+}
+
+.stat .v.lo,
+.stat.lo .v {
+  color: #E07A5F;
+}
+
+.stat .s {
+  font-size: 22rpx;
+  color: rgba(27, 46, 42, 0.45);
+  margin-top: 4rpx;
+}

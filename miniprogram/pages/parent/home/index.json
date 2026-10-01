@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的孩子",
+  "usingComponents": {
+    "role-tabbar": "/components/role-tabbar/role-tabbar",
+    "score-ring": "/components/score-ring/score-ring",
+    "timeline-list": "/components/timeline-list/timeline-list"
+  }
+}

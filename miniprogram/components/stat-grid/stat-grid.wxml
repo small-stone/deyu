@@ -1,0 +1,7 @@
+<view class="stat-grid">
+  <view class="stat {{item.tone || ''}}" wx:for="{{items}}" wx:key="k">
+    <view class="k">{{item.k}}</view>
+    <view class="v {{item.tone || ''}}">{{item.v}}</view>
+    <view class="s" wx:if="{{item.s}}">{{item.s}}</view>
+  </view>
+</view>
