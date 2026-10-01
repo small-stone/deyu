@@ -1,12 +1,16 @@
 .stat-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 16rpx;
+  justify-content: space-between;
   margin-bottom: 8rpx;
 }
 
 .stat {
-  width: calc(50% - 8rpx);
+  /* Percentage basis: iOS WeChat ignores flex gap and stretches calc() items to full width. */
+  flex: 0 0 48.5%;
+  width: 48.5%;
+  max-width: 48.5%;
+  margin-bottom: 20rpx;
   background: #fff;
   border: 1rpx solid rgba(14, 143, 122, 0.12);
   border-radius: 28rpx;

@@ -334,11 +334,16 @@ page {
 .action-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 16rpx;
+  justify-content: space-between;
 }
 
 .act {
-  width: calc(50% - 8rpx);
+  /* Percentage basis: iOS WeChat ignores flex gap and stretches calc() items to full width. */
+  box-sizing: border-box;
+  flex: 0 0 48.5%;
+  width: 48.5%;
+  max-width: 48.5%;
+  margin-bottom: 20rpx;
   background: #fff;
   border: 1rpx solid var(--line);
   border-radius: var(--r);

@@ -10,3 +10,49 @@
 }
 
 .panel{min-height:60vh}
+
+.action-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.act {
+  box-sizing: border-box;
+  flex: 0 0 48.5%;
+  width: 48.5%;
+  max-width: 48.5%;
+  margin-bottom: 20rpx;
+  background: #fff;
+  border: 1rpx solid var(--line);
+  border-radius: var(--r);
+  padding: 24rpx;
+  box-shadow: var(--shadow);
+}
+
+.act .at {
+  font-weight: 700;
+  margin-top: 12rpx;
+}
+
+.act .ad {
+  font-size: 22rpx;
+  color: var(--ink-55);
+  margin-top: 4rpx;
+}
+
+.act .ai {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.act.a1 .ai { background: var(--brand-soft); color: var(--brand); }
+.act.a2 .ai { background: var(--sky-soft); color: var(--sky); }
+.act.a3 .ai { background: var(--gold-soft); color: var(--gold); }
+.act.a4 .ai { background: var(--coral-soft); color: var(--coral); }
