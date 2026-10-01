@@ -1,10 +1,103 @@
+.page.no-tab {
+  background: #F4F8F6;
+}
+
+.welcome-hero {
+  text-align: center;
+  padding: 48rpx 0 8rpx;
+}
+
+.illus-wrap {
+  width: 168rpx;
+  height: 168rpx;
+  margin: 0 auto 36rpx;
+}
+
+.illus-wrap .logo {
+  width: 168rpx;
+  height: 168rpx;
+  display: block;
+}
+
+.brand {
+  font-size: 60rpx;
+  font-weight: 700;
+  letter-spacing: -1rpx;
+  color: #1B2E2A;
+  line-height: 1.15;
+}
+
+.desc {
+  margin-top: 16rpx;
+  color: rgba(27, 46, 42, 0.55);
+  font-size: 28rpx;
+  line-height: 1.55;
+  white-space: pre-line;
+}
+
+.role-card {
+  display: flex;
+  align-items: center;
+  gap: 28rpx;
+  background: #fff;
+  border-radius: 36rpx;
+  padding: 32rpx 28rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(14, 143, 122, 0.06);
+  border: 1rpx solid rgba(255, 255, 255, 0.95);
+  border-left-width: 8rpx;
+  border-left-style: solid;
+}
+
+.role-card.r1 { border-left-color: #0E8F7A; }
+.role-card.r2 { border-left-color: #4A90A4; }
+.role-card.r3 { border-left-color: #D4A017; }
+
+.role-ico {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.role-card.r1 .role-ico { background: #DDF4EE; }
+.role-card.r2 .role-ico { background: #E8F3F6; }
+.role-card.r3 .role-ico { background: #FBF3DC; }
+
+.role-ico image {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.role-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.rt {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1B2E2A;
+}
+
+.rd {
+  font-size: 22rpx;
+  color: rgba(27, 46, 42, 0.55);
+  margin-top: 6rpx;
+}
+
+.arrow {
+  margin-left: auto;
+  color: rgba(27, 46, 42, 0.35);
+  font-size: 36rpx;
+}
+
 .hint {
   text-align: center;
   margin-top: 40rpx;
   font-size: 22rpx;
   color: rgba(27, 46, 42, 0.35);
-}
-
-.desc {
-  white-space: pre-line;
 }

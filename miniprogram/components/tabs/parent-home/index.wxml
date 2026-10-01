@@ -1,0 +1,42 @@
+<view class="panel" wx:if="{{child}}">
+  <view class="nav-row">
+    <view>
+      <view class="nav-title">我的孩子</view>
+      <view class="sub">已绑定 {{children.length}} 位</view>
+    </view>
+    <view class="avatar">家</view>
+  </view>
+
+  <view class="child-switch">
+    <view
+      class="child-chip {{selectedId === item.id ? 'on' : ''}}"
+      wx:for="{{children}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="selectChild"
+    >{{item.name}}</view>
+    <view class="child-chip" data-id="bind" bindtap="selectChild">＋ 绑定</view>
+  </view>
+
+  <view class="score-panel">
+    <view class="top">
+      <view class="who">当前德育分</view>
+      <view class="cls">{{className}}</view>
+    </view>
+    <view class="score-main">
+      <score-ring score="{{child.score}}" />
+      <view class="score-side">
+        <view class="line"><text>初始分</text><strong>60</strong></view>
+        <view class="line"><text>本学期</text><strong>{{termDelta}}</strong></view>
+        <view class="line"><text>本班排名</text><strong>{{rank}}</strong></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-h">
+    <view class="section-title">近期记录</view>
+    <view class="more" bindtap="openTimeline">查看全部 ›</view>
+  </view>
+  <timeline-list items="{{recent}}" />
+
+</view>

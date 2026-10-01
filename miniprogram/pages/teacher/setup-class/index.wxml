@@ -14,7 +14,7 @@
   </view>
 
   <view class="field">
-    <label>班级编号</label>
+    <view class="field-label">班级编号</view>
     <input class="input big" value="{{className}}" bindinput="onInput" placeholder="如 352" />
   </view>
 

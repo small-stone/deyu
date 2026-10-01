@@ -10,7 +10,9 @@ Page({
     app.setRole('teacher');
     const cls = store.getCurrentTeacherClass();
     if (!cls) {
-      wx.redirectTo({ url: '/pages/teacher/setup-class/index' });
+      wx.navigateBack({
+        fail: () => wx.redirectTo({ url: '/pages/teacher/setup-class/index' }),
+      });
       return;
     }
     this.setData({ className: cls.name });
@@ -19,11 +21,11 @@ Page({
   importDemo() {
     store.seedRosterForCurrentClass();
     wx.showToast({ title: '导入成功', icon: 'success' });
-    setTimeout(() => wx.redirectTo({ url: '/pages/teacher/home/index' }), 400);
+    setTimeout(() => wx.reLaunch({ url: '/pages/teacher/main/index' }), 400);
   },
 
   skip() {
     store.skipRoster();
-    wx.redirectTo({ url: '/pages/teacher/home/index' });
+    wx.reLaunch({ url: '/pages/teacher/main/index' });
   },
 });

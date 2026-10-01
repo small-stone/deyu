@@ -1,5 +1,4 @@
 <view class="page no-tab" wx:if="{{child}}">
-  <view class="back" bindtap="back">‹ 返回</view>
   <view class="card head">
     <view class="avatar">{{child.name[0]}}</view>
     <view class="mid">

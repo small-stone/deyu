@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "score-ring": "/components/score-ring/score-ring",
+    "timeline-list": "/components/timeline-list/timeline-list"
+  },
+  "styleIsolation": "shared"
+}

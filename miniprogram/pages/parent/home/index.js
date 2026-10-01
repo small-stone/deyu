@@ -42,7 +42,7 @@ Page({
   selectChild(e) {
     const id = e.currentTarget.dataset.id;
     if (id === 'bind') {
-      wx.redirectTo({ url: '/pages/parent/bind/index' });
+      wx.navigateTo({ url: '/pages/parent/bind/index' });
       return;
     }
     store.setSelectedChild(id);

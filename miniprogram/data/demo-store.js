@@ -296,8 +296,9 @@ function adjustScore(studentId, delta, reason) {
   if (!reason || reason.trim().length < 4) {
     return { ok: false, message: '事由至少 4 个字' };
   }
-  student.score += delta;
-  student.recentDelta = (student.recentDelta || 0) + delta;
+  // Keep one decimal place to avoid float drift
+  student.score = Math.round((student.score + delta) * 10) / 10;
+  student.recentDelta = Math.round(((student.recentDelta || 0) + delta) * 10) / 10;
   const now = new Date();
   const pad = (n) => `${n}`.padStart(2, '0');
   const createdAt = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;

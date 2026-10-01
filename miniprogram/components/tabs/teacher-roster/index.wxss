@@ -1,0 +1,22 @@
+.add {
+  font-size: 26rpx;
+  color: #0E8F7A;
+  font-weight: 700;
+}
+
+.pad {
+  padding: 8rpx 28rpx;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 26rpx;
+}
+
+.empty {
+  padding: 32rpx;
+  text-align: center;
+  color: rgba(27, 46, 42, 0.45);
+}
+
+.panel{min-height:60vh}

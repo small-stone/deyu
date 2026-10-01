@@ -1,0 +1,12 @@
+.pad {
+  padding: 8rpx 28rpx;
+}
+
+.empty {
+  padding: 28rpx 0;
+  text-align: center;
+  color: rgba(27, 46, 42, 0.45);
+  font-size: 26rpx;
+}
+
+.panel{min-height:60vh}

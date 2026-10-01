@@ -29,12 +29,10 @@ Page({
     if (res.ok) {
       wx.showToast({ title: '绑定成功', icon: 'success' });
       setTimeout(() => {
-        wx.redirectTo({ url: '/pages/parent/home/index' });
+        wx.navigateBack({
+          fail: () => wx.redirectTo({ url: '/pages/parent/home/index' }),
+        });
       }, 500);
     }
-  },
-
-  back() {
-    wx.redirectTo({ url: '/pages/parent/home/index' });
   },
 });

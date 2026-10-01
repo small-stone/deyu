@@ -1,0 +1,7 @@
+.dist-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.panel{min-height:60vh}

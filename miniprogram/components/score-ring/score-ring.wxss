@@ -1,29 +1,22 @@
 .ring-wrap {
   width: 216rpx;
   height: 216rpx;
-  position: relative;
   flex-shrink: 0;
 }
 
-.ring-track,
-.ring-progress {
-  position: absolute;
-  inset: 0;
+.ring-outer {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
+  border: 16rpx solid rgba(255, 255, 255, 0.85);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.ring-track {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.ring-progress {
-  mask: radial-gradient(transparent 62%, #000 63%);
-  -webkit-mask: radial-gradient(transparent 62%, #000 63%);
-}
-
-.center {
-  position: absolute;
-  inset: 0;
+.ring-inner {
   display: flex;
   flex-direction: column;
   align-items: center;

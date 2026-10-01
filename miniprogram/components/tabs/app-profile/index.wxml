@@ -1,0 +1,34 @@
+<view class="panel">
+  <view class="nav-row">
+    <view>
+      <view class="nav-title">我的</view>
+      <view class="sub">当前角色 · {{roleLabel}}（演示）</view>
+    </view>
+    <view class="avatar {{role === 'admin' ? 'gold' : ''}}">{{roleLabel[0]}}</view>
+  </view>
+
+  <view class="card">
+    <view class="row" bindtap="switchRole">
+      <view>
+        <view class="name">切换角色</view>
+        <view class="meta-t">返回欢迎页重新选择身份</view>
+      </view>
+      <view class="arrow">›</view>
+    </view>
+    <view class="row" wx:if="{{role === 'teacher'}}" bindtap="resetEmpty">
+      <view>
+        <view class="name">演示空班级引导</view>
+        <view class="meta-t">重置为无班级，进入创建班级流程</view>
+      </view>
+      <view class="arrow">›</view>
+    </view>
+    <view class="row" bindtap="reseed">
+      <view>
+        <view class="name">恢复演示数据</view>
+        <view class="meta-t">重新载入设计稿示例数据</view>
+      </view>
+      <view class="arrow">›</view>
+    </view>
+  </view>
+
+</view>

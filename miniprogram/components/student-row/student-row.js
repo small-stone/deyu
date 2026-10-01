@@ -1,4 +1,8 @@
 Component({
+  options: {
+    styleIsolation: 'shared',
+    addGlobalClass: true,
+  },
   properties: {
     name: { type: String, value: '' },
     meta: String,
@@ -7,14 +11,6 @@ Component({
     showHl: { type: Boolean, value: false },
     high: Number,
     low: Number,
-  },
-  observers: {
-    name(name) {
-      this.setData({ initial: name ? name[0] : '' });
-    },
-  },
-  data: {
-    initial: '',
   },
   methods: {
     onTap() {

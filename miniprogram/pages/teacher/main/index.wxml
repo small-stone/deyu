@@ -1,0 +1,17 @@
+<view class="shell">
+  <view class="body">
+    <view hidden="{{tab !== 'home'}}" wx:if="{{visited.home}}">
+      <teacher-home active="{{tab === 'home'}}" bind:switchtab="onSwitchTab" />
+    </view>
+    <view hidden="{{tab !== 'students'}}" wx:if="{{visited.students}}">
+      <teacher-roster active="{{tab === 'students'}}" />
+    </view>
+    <view hidden="{{tab !== 'board'}}" wx:if="{{visited.board}}">
+      <teacher-board active="{{tab === 'board'}}" />
+    </view>
+    <view hidden="{{tab !== 'profile'}}" wx:if="{{visited.profile}}">
+      <app-profile active="{{tab === 'profile'}}" role="teacher" />
+    </view>
+  </view>
+  <role-tabbar role="teacher" active="{{tab}}" bind:change="onTabChange" />
+</view>

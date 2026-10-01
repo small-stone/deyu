@@ -1,16 +1,17 @@
 .stat-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 16rpx;
   margin-bottom: 8rpx;
 }
 
 .stat {
+  width: calc(50% - 8rpx);
   background: #fff;
   border: 1rpx solid rgba(14, 143, 122, 0.12);
   border-radius: 28rpx;
   padding: 22rpx;
-  box-shadow: 0 8rpx 24rpx rgba(14, 143, 122, 0.06);
+  box-sizing: border-box;
 }
 
 .stat .k {

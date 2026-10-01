@@ -1,19 +1,76 @@
 <view class="tabbar">
   <block wx:if="{{role === 'parent'}}">
-    <view class="tab {{active === 'home' ? 'on' : ''}}" data-key="home" bindtap="onTap">孩子</view>
-    <view class="tab {{active === 'bind' ? 'on' : ''}}" data-key="bind" bindtap="onTap">绑定</view>
-    <view class="tab {{active === 'profile' ? 'on' : ''}}" data-key="profile" bindtap="onTap">我的</view>
+    <view class="tab {{active === 'home' ? 'on' : ''}}" data-key="home" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/child-{{active === 'home' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>孩子</text>
+    </view>
+    <view class="tab {{active === 'bind' ? 'on' : ''}}" data-key="bind" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/plus-{{active === 'bind' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>绑定</text>
+    </view>
+    <view class="tab {{active === 'profile' ? 'on' : ''}}" data-key="profile" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/user-{{active === 'profile' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>我的</text>
+    </view>
   </block>
+
   <block wx:elif="{{role === 'teacher'}}">
-    <view class="tab {{active === 'home' ? 'on' : ''}}" data-key="home" bindtap="onTap">本班</view>
-    <view class="tab {{active === 'students' ? 'on' : ''}}" data-key="students" bindtap="onTap">学生</view>
-    <view class="tab {{active === 'board' ? 'on' : ''}}" data-key="board" bindtap="onTap">看板</view>
-    <view class="tab {{active === 'profile' ? 'on' : ''}}" data-key="profile" bindtap="onTap">我的</view>
+    <view class="tab {{active === 'home' ? 'on' : ''}}" data-key="home" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/home-{{active === 'home' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>本班</text>
+    </view>
+    <view class="tab {{active === 'students' ? 'on' : ''}}" data-key="students" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/people-{{active === 'students' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>学生</text>
+    </view>
+    <view class="tab {{active === 'board' ? 'on' : ''}}" data-key="board" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/chart-{{active === 'board' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>看板</text>
+    </view>
+    <view class="tab {{active === 'profile' ? 'on' : ''}}" data-key="profile" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/user-{{active === 'profile' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>我的</text>
+    </view>
   </block>
+
   <block wx:else>
-    <view class="tab {{active === 'overview' ? 'on' : ''}}" data-key="overview" bindtap="onTap">总览</view>
-    <view class="tab {{active === 'rank' ? 'on' : ''}}" data-key="rank" bindtap="onTap">排名</view>
-    <view class="tab {{active === 'classes' ? 'on' : ''}}" data-key="classes" bindtap="onTap">班级</view>
-    <view class="tab {{active === 'profile' ? 'on' : ''}}" data-key="profile" bindtap="onTap">设置</view>
+    <view class="tab {{active === 'overview' ? 'on' : ''}}" data-key="overview" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/grid-{{active === 'overview' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>总览</text>
+    </view>
+    <view class="tab {{active === 'rank' ? 'on' : ''}}" data-key="rank" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/chart-{{active === 'rank' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>排名</text>
+    </view>
+    <view class="tab {{active === 'classes' ? 'on' : ''}}" data-key="classes" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/home-{{active === 'classes' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>班级</text>
+    </view>
+    <view class="tab {{active === 'profile' ? 'on' : ''}}" data-key="profile" bindtap="onTap">
+      <view class="tab-ico">
+        <image class="tab-ico-img" src="/images/tab/settings-{{active === 'profile' ? 'on' : 'off'}}.svg" mode="aspectFit" />
+      </view>
+      <text>设置</text>
+    </view>
   </block>
 </view>

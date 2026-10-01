@@ -1,0 +1,14 @@
+<view class="shell">
+  <view class="body">
+    <view hidden="{{tab !== 'home'}}" wx:if="{{visited.home}}">
+      <parent-home active="{{tab === 'home'}}" bind:switchtab="onSwitchTab" />
+    </view>
+    <view hidden="{{tab !== 'bind'}}" wx:if="{{visited.bind}}">
+      <parent-bind active="{{tab === 'bind'}}" bind:switchtab="onSwitchTab" />
+    </view>
+    <view hidden="{{tab !== 'profile'}}" wx:if="{{visited.profile}}">
+      <app-profile active="{{tab === 'profile'}}" role="parent" />
+    </view>
+  </view>
+  <role-tabbar role="parent" active="{{tab}}" bind:change="onTabChange" />
+</view>

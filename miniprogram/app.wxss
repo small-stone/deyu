@@ -17,13 +17,11 @@ page {
   --line: rgba(14, 143, 122, 0.12);
   --bg: #F4F8F6;
   --card: #FFFFFF;
-  --shadow: 0 8rpx 40rpx rgba(14, 143, 122, 0.10);
+  --shadow: 0 4rpx 16rpx rgba(14, 143, 122, 0.06);
   --r: 32rpx;
   --r-lg: 44rpx;
 
-  background:
-    radial-gradient(ellipse 90% 40% at 50% -10%, rgba(14, 143, 122, 0.12), transparent 55%),
-    var(--bg);
+  background: var(--bg);
   color: var(--ink);
   font-size: 28rpx;
   min-height: 100%;
@@ -122,7 +120,7 @@ page {
 .btn-primary {
   background: linear-gradient(145deg, #1AA88F, var(--brand-deep));
   color: #fff;
-  box-shadow: 0 12rpx 28rpx rgba(14, 143, 122, 0.28);
+  box-shadow: 0 8rpx 20rpx rgba(14, 143, 122, 0.18);
 }
 
 .btn-ghost {
@@ -141,7 +139,7 @@ page {
   margin-bottom: 24rpx;
 }
 
-.field label {
+.field-label {
   display: block;
   font-size: 24rpx;
   color: var(--ink-55);
@@ -254,7 +252,7 @@ page {
   border-radius: var(--r-lg);
   padding: 28rpx;
   color: #fff;
-  box-shadow: 0 24rpx 48rpx rgba(14, 143, 122, 0.28);
+  box-shadow: 0 12rpx 28rpx rgba(14, 143, 122, 0.18);
   margin-bottom: 8rpx;
   position: relative;
   overflow: hidden;
@@ -334,12 +332,13 @@ page {
 }
 
 .action-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 16rpx;
 }
 
 .act {
+  width: calc(50% - 8rpx);
   background: #fff;
   border: 1rpx solid var(--line);
   border-radius: var(--r);
@@ -410,7 +409,6 @@ page {
   background: var(--coral);
 }
 
-.dist-bars .col text,
 .dist-bars .col .lbl {
   font-size: 18rpx;
   color: var(--ink-35);
@@ -538,39 +536,6 @@ page {
   background: var(--brand-soft);
   color: var(--brand-deep);
   font-weight: 700;
-}
-
-.welcome-hero {
-  text-align: center;
-  padding: 64rpx 0 24rpx;
-}
-
-.welcome-hero .illus {
-  width: 112rpx;
-  height: 112rpx;
-  margin: 0 auto 24rpx;
-  border-radius: 36rpx;
-  background: linear-gradient(145deg, #1AA88F, var(--brand-deep));
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48rpx;
-  font-weight: 700;
-  box-shadow: 0 16rpx 40rpx rgba(14, 143, 122, 0.3);
-}
-
-.welcome-hero .brand {
-  font-size: 52rpx;
-  font-weight: 700;
-  letter-spacing: -1rpx;
-}
-
-.welcome-hero .desc {
-  margin-top: 12rpx;
-  color: var(--ink-55);
-  font-size: 26rpx;
-  line-height: 1.55;
 }
 
 .float-badge {

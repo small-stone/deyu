@@ -24,7 +24,10 @@ Page({
   },
 
   onSearch(e) {
-    this.setData({ keyword: e.detail.value }, () => this.refresh());
+    const keyword = e.detail.value;
+    this.setData({ keyword });
+    if (this._searchTimer) clearTimeout(this._searchTimer);
+    this._searchTimer = setTimeout(() => this.refresh(), 200);
   },
 
   importDemo() {
@@ -36,9 +39,5 @@ Page({
   openScore(e) {
     const id = e.currentTarget.dataset.id;
     wx.navigateTo({ url: `/pages/teacher/score/index?id=${id}` });
-  },
-
-  back() {
-    wx.redirectTo({ url: '/pages/teacher/home/index' });
   },
 });

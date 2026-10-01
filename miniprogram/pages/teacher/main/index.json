@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "本班",
+  "usingComponents": {
+    "role-tabbar": "/components/role-tabbar/role-tabbar",
+    "teacher-home": "/components/tabs/teacher-home/index",
+    "teacher-roster": "/components/tabs/teacher-roster/index",
+    "teacher-board": "/components/tabs/teacher-board/index",
+    "app-profile": "/components/tabs/app-profile/index"
+  }
+}

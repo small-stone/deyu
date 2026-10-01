@@ -8,7 +8,7 @@
   padding: 8rpx 28rpx;
 }
 
-.search input {
+.search-input {
   flex: 1;
   font-size: 26rpx;
 }

@@ -24,7 +24,14 @@
 .amount {
   font-size: 44rpx;
   font-weight: 700;
+}
+
+.amount.add {
   color: #0E8F7A;
+}
+
+.amount.deduct {
+  color: #E07A5F;
 }
 
 .tag-label {
@@ -35,6 +42,38 @@
 }
 
 .float-badge {
+  font-size: 22rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  font-weight: 700;
+}
+
+.float-badge.add {
   background: #DDF4EE;
   color: #0A6B5C;
+}
+
+.float-badge.deduct {
+  background: #FCEBE6;
+  color: #E07A5F;
+}
+
+.seg-item.on.add {
+  color: #0A6B5C;
+}
+
+.seg-item.on.deduct {
+  color: #E07A5F;
+}
+
+.tag.active.deduct {
+  background: #FCEBE6;
+  color: #E07A5F;
+  border-color: transparent;
+}
+
+.btn-deduct {
+  background: linear-gradient(145deg, #E8927C, #E07A5F);
+  color: #fff;
+  box-shadow: 0 8rpx 20rpx rgba(224, 122, 95, 0.28);
 }

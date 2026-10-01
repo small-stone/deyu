@@ -1,0 +1,5 @@
+.pad {
+  padding: 4rpx 28rpx;
+}
+
+.panel{min-height:60vh}

@@ -1,0 +1,57 @@
+<view class="panel">
+  <view class="nav-row">
+    <view>
+      <view class="nav-title">{{className}}</view>
+      <view class="sub">{{teacherName}} · {{studentCount}} 名学生</view>
+    </view>
+    <view class="avatar">李</view>
+  </view>
+
+  <stat-grid items="{{stats}}" />
+
+  <view class="section-h">
+    <view class="section-title">需关注</view>
+    <text class="more">最低分</text>
+  </view>
+  <view class="card pad">
+    <block wx:if="{{attention.length}}">
+      <student-row
+        wx:for="{{attention}}"
+        wx:key="id"
+        name="{{item.name}}"
+        meta="{{item.meta}}"
+        score="{{item.score}}"
+        tone="{{item.score < 40 ? 'coral' : ''}}"
+        data-id="{{item.id}}"
+        bind:tap="goStudent"
+      />
+    </block>
+    <view wx:else class="empty">暂无学生，请先导入花名册</view>
+  </view>
+
+  <view class="section-h">
+    <view class="section-title">快捷操作</view>
+  </view>
+  <view class="action-grid">
+    <view class="act a1" bindtap="goRoster">
+      <view class="ai">册</view>
+      <view class="at">花名册</view>
+      <view class="ad">导入 / 编辑</view>
+    </view>
+    <view class="act a2" bindtap="goScore">
+      <view class="ai">±</view>
+      <view class="at">加减分</view>
+      <view class="ad">填写事由</view>
+    </view>
+    <view class="act a3" bindtap="goBoard">
+      <view class="ai">榜</view>
+      <view class="at">排名看板</view>
+      <view class="ad">高低分一览</view>
+    </view>
+    <view class="act a4" bindtap="goRoster">
+      <view class="ai">搜</view>
+      <view class="at">搜学生</view>
+      <view class="ad">姓名 / 学号</view>
+    </view>
+  </view>
+</view>

@@ -26,7 +26,7 @@
 - [x] 4.2 Implement upload-roster empty state (S05b) with import/manual/skip demo actions; verify skip enters home with score-adjust blocked; import/manual seeds students and opens ready home
 - [x] 4.3 Implement teacher ready home (S05) with stats, attention list, shortcuts, teacher tabbar; verify seeded stats match design (avg/high/low)
 - [x] 4.4 Implement roster page (S06) with upload zone UI, search filter, list scores; verify search filters by name/studentNo on mock list
-- [x] 4.5 Implement score adjust page (S07): add/deduct, amount, reason tags, require reason ≥4 chars; verify successful submit updates store score+log and reject without reason
+- [x] 4.5 Implement score adjust page (S07): add/deduct, amount (up to 1 decimal place), reason tags, require reason ≥4 chars; verify successful submit updates store score+log and reject without reason
 - [x] 4.6 Implement class board (S08): extrema, distribution with counts including &lt;0, medal rank list; verify board reflects current mock class students
 
 ## 5. Admin portal

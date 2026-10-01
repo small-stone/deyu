@@ -1,0 +1,36 @@
+<view class="panel">
+  <view class="nav-row">
+    <view>
+      <view class="nav-title">本班看板</view>
+      <view class="sub">{{className}} · 本学期</view>
+    </view>
+  </view>
+
+  <stat-grid items="{{stats}}" />
+
+  <view class="card" style="margin:20rpx 0">
+    <view class="section-title">分数分布</view>
+    <view class="dist-bars">
+      <view class="col {{item.low ? 'low' : ''}}" wx:for="{{distribution}}" wx:key="label">
+        <view class="cnt">{{item.count}}人</view>
+        <view class="b" style="height: {{item.height * 2}}rpx"></view>
+        <view class="lbl">{{item.label}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="seg">
+    <view class="seg-item {{listMode === 'high' ? 'on' : ''}}" data-mode="high" bindtap="setListMode">高分榜</view>
+    <view class="seg-item {{listMode === 'low' ? 'on' : ''}}" data-mode="low" bindtap="setListMode">低分关注</view>
+  </view>
+
+  <view class="card">
+    <view class="rank-row" wx:for="{{list}}" wx:key="id">
+      <view class="medal {{item.rank === 1 ? 'm1' : (item.rank === 2 ? 'm2' : (item.rank === 3 ? 'm3' : ''))}}">{{item.rank}}</view>
+      <view class="bar-wrap">
+        <view class="nm"><text>{{item.name}}</text><strong>{{item.score}}</strong></view>
+        <view class="bar"><view class="fill" style="width: {{item.width}}%"></view></view>
+      </view>
+    </view>
+  </view>
+</view>

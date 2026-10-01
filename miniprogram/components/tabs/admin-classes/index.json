@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "student-row": "/components/student-row/student-row"
+  },
+  "styleIsolation": "shared"
+}

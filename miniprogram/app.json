@@ -1,19 +1,14 @@
 {
   "pages": [
     "pages/welcome/index",
-    "pages/parent/home/index",
-    "pages/parent/bind/index",
+    "pages/parent/main/index",
     "pages/parent/timeline/index",
     "pages/teacher/setup-class/index",
     "pages/teacher/setup-roster/index",
-    "pages/teacher/home/index",
-    "pages/teacher/roster/index",
+    "pages/teacher/main/index",
     "pages/teacher/score/index",
     "pages/teacher/board/index",
-    "pages/admin/overview/index",
-    "pages/admin/rank/index",
-    "pages/admin/classes/index",
-    "pages/common/profile/index"
+    "pages/admin/main/index"
   ],
   "window": {
     "backgroundColor": "#F4F8F6",

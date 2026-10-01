@@ -6,7 +6,6 @@ App({
       currentRole: null,
       env: '',
     };
-    // Demo mode: do not init cloud / call cloud APIs
   },
 
   setRole(role) {
@@ -23,7 +22,7 @@ App({
 
   enterParent() {
     this.setRole('parent');
-    wx.reLaunch({ url: '/pages/parent/home/index' });
+    wx.reLaunch({ url: '/pages/parent/main/index' });
   },
 
   enterTeacher() {
@@ -34,19 +33,18 @@ App({
       return;
     }
     if (state.teacherMode === 'empty' && state.currentClassId) {
-      const cls = store.getCurrentTeacherClass();
       const count = store.getStudentsByClass(state.currentClassId).length;
-      if (!cls || count === 0) {
+      if (count === 0) {
         wx.reLaunch({ url: '/pages/teacher/setup-roster/index' });
         return;
       }
     }
-    wx.reLaunch({ url: '/pages/teacher/home/index' });
+    wx.reLaunch({ url: '/pages/teacher/main/index' });
   },
 
   enterAdmin() {
     this.setRole('admin');
-    wx.reLaunch({ url: '/pages/admin/overview/index' });
+    wx.reLaunch({ url: '/pages/admin/main/index' });
   },
 
   switchRole() {

@@ -1,8 +1,8 @@
 <view class="ring-wrap">
-  <view class="ring-track"></view>
-  <view class="ring-progress" style="background: conic-gradient(#fff {{pct * 3.6}}deg, rgba(255,255,255,.18) 0);"></view>
-  <view class="center">
-    <text class="n">{{score}}</text>
-    <text class="u">分</text>
+  <view class="ring-outer">
+    <view class="ring-inner">
+      <text class="n">{{score}}</text>
+      <text class="u">分</text>
+    </view>
   </view>
 </view>

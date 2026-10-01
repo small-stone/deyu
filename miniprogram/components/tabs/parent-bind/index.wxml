@@ -1,0 +1,23 @@
+<view class="panel">
+  <view class="nav-row" style="margin-bottom:8rpx">
+    <view class="nav-title">绑定孩子</view>
+  </view>
+  <view class="intro">输入与花名册一致的姓名和身份证号，核验通过即可查看分数。</view>
+
+  <view class="field">
+    <view class="field-label">学生姓名</view>
+    <input class="input" placeholder="如：陈一诺" value="{{name}}" bindinput="onName" />
+  </view>
+  <view class="field">
+    <view class="field-label">身份证号</view>
+    <input class="input" placeholder="请输入身份证号" value="{{idNumber}}" bindinput="onId" />
+  </view>
+
+  <view class="btn btn-primary" bindtap="submit">确认绑定</view>
+
+  <view class="tip card" style="margin-top:28rpx">
+    <view class="name">演示提示</view>
+    <view class="meta-t">可绑定已有学生「陈一诺」或填写任意姓名新增演示孩子。</view>
+  </view>
+
+</view>

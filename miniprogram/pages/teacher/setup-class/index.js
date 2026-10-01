@@ -21,6 +21,6 @@ Page({
       return;
     }
     store.createClass(name);
-    wx.redirectTo({ url: '/pages/teacher/setup-roster/index' });
+    wx.navigateTo({ url: '/pages/teacher/setup-roster/index' });
   },
 });

@@ -1,0 +1,58 @@
+<view class="panel">
+  <view class="nav-row">
+    <view>
+      <view class="nav-title">全校总览</view>
+      <view class="sub">{{school.yearLabel}}</view>
+    </view>
+    <view class="avatar gold">管</view>
+  </view>
+
+  <view class="score-panel">
+    <view class="top">
+      <view class="who">全校平均德育分</view>
+      <view class="cls">{{school.classCount}} 个班</view>
+    </view>
+    <view class="avg-row">
+      <text class="avg">{{school.avg}}</text>
+      <text class="unit">分</text>
+    </view>
+    <view class="mini-stats">
+      <view class="mini"><view class="k">最高</view><view class="v">{{school.high}}</view></view>
+      <view class="mini"><view class="k">最低</view><view class="v">{{school.low}}</view></view>
+      <view class="mini"><view class="k">今日变动</view><view class="v">{{school.todayChanges}}</view></view>
+    </view>
+  </view>
+
+  <view class="section-h">
+    <view class="section-title">低分关注</view>
+    <text class="more">全校</text>
+  </view>
+  <view class="card pad">
+    <student-row
+      wx:for="{{lowAttention}}"
+      wx:key="id"
+      name="{{item.name}}"
+      meta="{{item.meta}}"
+      score="{{item.score}}"
+      tone="coral"
+    />
+  </view>
+
+  <view class="section-h">
+    <view class="section-title">班级列表</view>
+    <view class="more" bindtap="goClasses">查看全部</view>
+  </view>
+  <view class="card pad">
+    <student-row
+      wx:for="{{classes}}"
+      wx:key="id"
+      name="{{item.name}}"
+      meta="{{item.teacherName}} · 均分 {{item.avg}}"
+      showHl="{{true}}"
+      high="{{item.high}}"
+      low="{{item.low}}"
+      data-id="{{item.id}}"
+      bind:tap="openClass"
+    />
+  </view>
+</view>

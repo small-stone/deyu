@@ -47,11 +47,15 @@ The teacher portal SHALL provide a roster screen with upload zone UI, search fie
 - **THEN** the system shows the roster screen (S06) with mock students including both high and negative scores
 
 ### Requirement: Score adjust screen
-The teacher portal SHALL provide a score adjust flow: selected student, add/deduct mode, amount, required reason (with optional quick tags), and confirm that updates local demo score and log.
+The teacher portal SHALL provide a score adjust flow: selected student, add/deduct mode, amount, required reason (with optional quick tags), and confirm that updates local demo score and log. The amount field SHALL accept positive numbers with **at most one decimal place** (e.g. 1.5); stored score and log delta MUST keep one-decimal precision.
 
 #### Scenario: Submit deduct with reason
 - **WHEN** the teacher selects a student, chooses deduct, enters an amount and a reason of at least 4 characters, and confirms
 - **THEN** the system updates that student's local score, appends a score log, and shows success feedback
+
+#### Scenario: Accept one-decimal amount
+- **WHEN** the teacher enters an amount such as `1.5` in add or deduct mode and confirms with a valid reason
+- **THEN** the system applies a delta of ±1.5 and updates the student score using one-decimal precision
 
 #### Scenario: Block submit without reason
 - **WHEN** the teacher attempts to confirm without a reason

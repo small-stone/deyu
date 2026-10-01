@@ -1,0 +1,52 @@
+.avg-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10rpx;
+  margin: 16rpx 0 24rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.avg {
+  font-size: 88rpx;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2rpx;
+}
+
+.unit {
+  font-size: 24rpx;
+  opacity: 0.75;
+  padding-bottom: 12rpx;
+}
+
+.mini-stats {
+  display: flex;
+  gap: 16rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.mini {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 24rpx;
+  padding: 16rpx 20rpx;
+}
+
+.mini .k {
+  font-size: 20rpx;
+  opacity: 0.8;
+}
+
+.mini .v {
+  font-size: 34rpx;
+  font-weight: 700;
+  margin-top: 4rpx;
+}
+
+.pad {
+  padding: 4rpx 28rpx;
+}
+
+.panel{min-height:60vh}

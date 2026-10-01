@@ -1,11 +1,17 @@
 const store = require('../../../data/demo-store');
 
+function goBack() {
+  wx.navigateBack({
+    fail: () => wx.reLaunch({ url: '/pages/teacher/main/index' }),
+  });
+}
+
 Page({
   data: {
     student: null,
     className: '',
     mode: 'add',
-    amount: 3,
+    amount: '3',
     reason: '',
     tags: [],
     activeTag: '',
@@ -30,8 +36,20 @@ Page({
     this.setData({ mode: e.currentTarget.dataset.mode });
   },
 
+  // Allow digits + at most one decimal place (e.g. 1.5)
   onAmount(e) {
-    this.setData({ amount: Number(e.detail.value) || 0 });
+    let raw = String(e.detail.value || '');
+    raw = raw.replace(/[^\d.]/g, '');
+    const firstDot = raw.indexOf('.');
+    if (firstDot !== -1) {
+      const intPart = raw.slice(0, firstDot).replace(/\./g, '');
+      const fracPart = raw.slice(firstDot + 1).replace(/\./g, '').slice(0, 1);
+      raw = `${intPart}.${fracPart}`;
+    } else {
+      raw = raw.replace(/\./g, '');
+    }
+    this.setData({ amount: raw });
+    return raw;
   },
 
   onReason(e) {
@@ -44,17 +62,18 @@ Page({
   },
 
   cancel() {
-    wx.navigateBack({ fail: () => wx.redirectTo({ url: '/pages/teacher/roster/index' }) });
+    goBack();
   },
 
   submit() {
     const { student, mode, amount, reason } = this.data;
     if (!student) return;
-    if (!amount || amount <= 0) {
+    const value = Math.round(Number(amount) * 10) / 10;
+    if (!Number.isFinite(value) || value <= 0) {
       wx.showToast({ title: '请输入分值', icon: 'none' });
       return;
     }
-    const delta = mode === 'add' ? amount : -amount;
+    const delta = mode === 'add' ? value : -value;
     const res = store.adjustScore(student.id, delta, reason);
     if (!res.ok) {
       wx.showToast({ title: res.message || '提交失败', icon: 'none' });
@@ -62,8 +81,6 @@ Page({
     }
     wx.showToast({ title: mode === 'add' ? '加分成功' : '减分成功', icon: 'success' });
     this.setData({ student: res.student });
-    setTimeout(() => {
-      wx.navigateBack({ fail: () => wx.redirectTo({ url: '/pages/teacher/home/index' }) });
-    }, 500);
+    setTimeout(goBack, 500);
   },
 });

@@ -1,34 +1,40 @@
 <view class="page no-tab" wx:if="{{student}}">
-  <view class="back" bindtap="cancel">‹ 学生列表</view>
-
   <view class="card head">
     <view class="avatar">{{student.name[0]}}</view>
     <view class="mid">
       <view class="name">{{student.name}}</view>
       <view class="meta-t">{{className}} · 当前 {{student.score}} 分</view>
     </view>
-    <view class="float-badge">{{mode === 'add' ? '加分中' : '减分中'}}</view>
+    <view class="float-badge {{mode === 'deduct' ? 'deduct' : 'add'}}">
+      {{mode === 'add' ? '加分中' : '减分中'}}
+    </view>
   </view>
 
   <view class="seg">
-    <view class="seg-item {{mode === 'add' ? 'on' : ''}}" data-mode="add" bindtap="setMode">加分</view>
-    <view class="seg-item {{mode === 'deduct' ? 'on' : ''}}" data-mode="deduct" bindtap="setMode">减分</view>
+    <view class="seg-item {{mode === 'add' ? 'on add' : ''}}" data-mode="add" bindtap="setMode">加分</view>
+    <view class="seg-item {{mode === 'deduct' ? 'on deduct' : ''}}" data-mode="deduct" bindtap="setMode">减分</view>
   </view>
 
   <view class="field">
-    <label>分值</label>
-    <input class="input amount" type="number" value="{{amount}}" bindinput="onAmount" />
+    <view class="field-label">分值</view>
+    <input
+      class="input amount {{mode === 'deduct' ? 'deduct' : 'add'}}"
+      type="digit"
+      value="{{amount}}"
+      bindinput="onAmount"
+      placeholder="支持一位小数，如 1.5"
+    />
   </view>
 
   <view class="field">
-    <label>事由（必填）</label>
+    <view class="field-label">事由（必填）</view>
     <textarea class="input tall" value="{{reason}}" bindinput="onReason" maxlength="200" />
   </view>
 
   <view class="tag-label">常用事由</view>
   <view class="tags">
     <view
-      class="tag {{activeTag === item ? 'active' : ''}}"
+      class="tag {{activeTag === item ? (mode === 'deduct' ? 'active deduct' : 'active') : ''}}"
       wx:for="{{tags}}"
       wx:key="*this"
       data-tag="{{item}}"
@@ -38,6 +44,10 @@
 
   <view class="btn-row">
     <view class="btn btn-ghost" style="flex:0.8" bindtap="cancel">取消</view>
-    <view class="btn btn-primary" style="flex:1.2" bindtap="submit">确认{{mode === 'add' ? '加分' : '减分'}}</view>
+    <view
+      class="btn {{mode === 'deduct' ? 'btn-deduct' : 'btn-primary'}}"
+      style="flex:1.2"
+      bindtap="submit"
+    >确认{{mode === 'add' ? '加分' : '减分'}}</view>
   </view>
 </view>

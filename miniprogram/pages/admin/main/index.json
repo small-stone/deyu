@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "全校总览",
+  "usingComponents": {
+    "role-tabbar": "/components/role-tabbar/role-tabbar",
+    "admin-overview": "/components/tabs/admin-overview/index",
+    "admin-rank": "/components/tabs/admin-rank/index",
+    "admin-classes": "/components/tabs/admin-classes/index",
+    "app-profile": "/components/tabs/app-profile/index"
+  }
+}

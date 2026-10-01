@@ -1,13 +1,17 @@
 <view class="page no-tab">
   <view class="welcome-hero">
-    <view class="illus">德</view>
+    <view class="illus-wrap">
+      <image class="logo" src="/images/brand-logo.png" mode="aspectFit" />
+    </view>
     <view class="brand">德育通</view>
     <view class="desc">记录每一次成长与提醒。\n透明、可追溯的班级德育分。</view>
   </view>
 
   <view class="role-card r1" bindtap="enterParent">
-    <view class="role-ico">家</view>
-    <view>
+    <view class="role-ico">
+      <image src="/images/icons/role-parent.svg" mode="aspectFit" />
+    </view>
+    <view class="role-text">
       <view class="rt">我是家长</view>
       <view class="rd">绑定孩子，查看分数与记录</view>
     </view>
@@ -15,8 +19,10 @@
   </view>
 
   <view class="role-card r2" bindtap="enterTeacher">
-    <view class="role-ico">班</view>
-    <view>
+    <view class="role-ico">
+      <image src="/images/icons/role-teacher.svg" mode="aspectFit" />
+    </view>
+    <view class="role-text">
       <view class="rt">我是班主任</view>
       <view class="rd">花名册 · 加减分 · 本班看板</view>
     </view>
@@ -24,8 +30,10 @@
   </view>
 
   <view class="role-card r3" bindtap="enterAdmin">
-    <view class="role-ico">管</view>
-    <view>
+    <view class="role-ico">
+      <image src="/images/icons/role-admin.svg" mode="aspectFit" />
+    </view>
+    <view class="role-text">
       <view class="rt">我是管理员</view>
       <view class="rd">全校数据与排名总览</view>
     </view>

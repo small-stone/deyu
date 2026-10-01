@@ -10,7 +10,9 @@ Page({
   onShow() {
     const child = store.getSelectedChild();
     if (!child) {
-      wx.redirectTo({ url: '/pages/parent/home/index' });
+      wx.navigateBack({
+        fail: () => wx.reLaunch({ url: '/pages/parent/main/index' }),
+      });
       return;
     }
     const cls = store.getClass(child.classId);
@@ -19,9 +21,5 @@ Page({
       className: (cls && cls.name) || '',
       logs: store.getLogsForStudent(child.id),
     });
-  },
-
-  back() {
-    wx.navigateBack({ fail: () => wx.redirectTo({ url: '/pages/parent/home/index' }) });
   },
 });

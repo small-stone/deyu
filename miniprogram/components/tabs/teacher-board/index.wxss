@@ -1,0 +1,3 @@
+/* teacher board uses global styles */
+
+.panel{min-height:60vh}

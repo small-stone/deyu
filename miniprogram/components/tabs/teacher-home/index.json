@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "stat-grid": "/components/stat-grid/stat-grid",
+    "student-row": "/components/student-row/student-row"
+  },
+  "styleIsolation": "shared"
+}

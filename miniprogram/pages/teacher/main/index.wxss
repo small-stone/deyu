@@ -1,0 +1,31 @@
+.shell {
+  --brand: #0E8F7A;
+  --brand-deep: #0A6B5C;
+  --brand-soft: #DDF4EE;
+  --brand-mist: #F0FAF7;
+  --coral: #E07A5F;
+  --coral-soft: #FCEBE6;
+  --gold: #D4A017;
+  --gold-soft: #FBF3DC;
+  --sky: #4A90A4;
+  --sky-soft: #E8F3F6;
+  --ink: #1B2E2A;
+  --ink-80: rgba(27, 46, 42, 0.82);
+  --ink-55: rgba(27, 46, 42, 0.55);
+  --ink-35: rgba(27, 46, 42, 0.35);
+  --line: rgba(14, 143, 122, 0.12);
+  --bg: #F4F8F6;
+  --card: #FFFFFF;
+  --shadow: 0 4rpx 16rpx rgba(14, 143, 122, 0.06);
+  --r: 32rpx;
+  --r-lg: 44rpx;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.body {
+  padding: 24rpx 36rpx 0;
+  padding-bottom: calc(140rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
