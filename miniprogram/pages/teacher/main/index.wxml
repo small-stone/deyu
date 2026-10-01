@@ -7,7 +7,7 @@
       <teacher-roster active="{{tab === 'students'}}" />
     </view>
     <view hidden="{{tab !== 'board'}}" wx:if="{{visited.board}}">
-      <teacher-board active="{{tab === 'board'}}" />
+      <teacher-board id="teacher-board" active="{{tab === 'board'}}" />
     </view>
     <view hidden="{{tab !== 'profile'}}" wx:if="{{visited.profile}}">
       <app-profile active="{{tab === 'profile'}}" role="teacher" />

@@ -11,12 +11,38 @@
   width: 168rpx;
   height: 168rpx;
   margin: 0 auto 36rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.illus-wrap .logo {
-  width: 168rpx;
-  height: 168rpx;
-  display: block;
+.illus-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 56rpx;
+  border: 3rpx solid rgba(14, 143, 122, 0.2);
+  pointer-events: none;
+}
+
+.logo-mark {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 44rpx;
+  background: linear-gradient(145deg, #1AA88F, #0A6B5C);
+  box-shadow: 0 24rpx 56rpx rgba(14, 143, 122, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-drop {
+  width: 68rpx;
+  height: 68rpx;
 }
 
 .brand {

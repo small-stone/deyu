@@ -4,7 +4,6 @@
       <view class="nav-title">我的孩子</view>
       <view class="sub">已绑定 {{children.length}} 位</view>
     </view>
-    <view class="avatar">家</view>
   </view>
 
   <view class="child-switch">

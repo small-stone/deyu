@@ -4,7 +4,6 @@
       <view class="nav-title">全校总览</view>
       <view class="sub">{{school.yearLabel}}</view>
     </view>
-    <view class="avatar gold">管</view>
   </view>
 
   <view class="score-panel">
@@ -47,6 +46,7 @@
       wx:for="{{classes}}"
       wx:key="id"
       name="{{item.name}}"
+      avatar="{{item.name}}"
       meta="{{item.teacherName}} · 均分 {{item.avg}}"
       showHl="{{true}}"
       high="{{item.high}}"

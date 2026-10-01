@@ -1,4 +1,5 @@
 const store = require('../../../data/demo-store');
+const { isLowScore, personalBarWidth } = require('../../../utils/score-bar');
 
 Component({
   options: {
@@ -15,7 +16,6 @@ Component({
       if (!board) return;
       const cls = board.class;
       const list = this.data.listMode === 'high' ? board.highList : board.lowList;
-      const max = list.length ? Math.max(...list.map((s) => Math.abs(s.score)), 1) : 1;
       this.setData({
         className: cls.name,
         stats: [
@@ -26,12 +26,18 @@ Component({
         list: list.map((s, i) => ({
           ...s,
           rank: i + 1,
-          width: Math.max(8, Math.round((Math.abs(s.score) / max) * 100)),
+          width: personalBarWidth(s.score),
+          low: isLowScore(s.score),
         })),
       });
     },
     setListMode(e) {
       this.setData({ listMode: e.currentTarget.dataset.mode }, () => this.refresh());
+    },
+    openStudent(e) {
+      const id = e.currentTarget.dataset.id;
+      if (!id) return;
+      wx.navigateTo({ url: `/pages/common/student-detail/index?id=${id}` });
     },
   },
 });

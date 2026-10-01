@@ -1,3 +1,4 @@
+const app = getApp();
 const store = require('../../../data/demo-store');
 
 Component({
@@ -16,12 +17,12 @@ Component({
     refresh() {
       const state = store.getState();
       if (state.teacherMode === 'empty' && !state.currentClassId) {
-        wx.reLaunch({ url: '/pages/teacher/setup-class/index' });
+        app.openPage('/pages/teacher/setup-class/index');
         return;
       }
       const info = store.getTeacherHomeStats();
       if (!info) {
-        wx.reLaunch({ url: '/pages/teacher/setup-class/index' });
+        app.openPage('/pages/teacher/setup-class/index');
         return;
       }
       const cls = info.class;

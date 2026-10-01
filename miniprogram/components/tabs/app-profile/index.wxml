@@ -4,7 +4,6 @@
       <view class="nav-title">我的</view>
       <view class="sub">当前角色 · {{roleLabel}}（演示）</view>
     </view>
-    <view class="avatar {{role === 'admin' ? 'gold' : ''}}">{{roleLabel[0]}}</view>
   </view>
 
   <view class="card">

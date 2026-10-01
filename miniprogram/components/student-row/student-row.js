@@ -5,6 +5,7 @@ Component({
   },
   properties: {
     name: { type: String, value: '' },
+    avatar: { type: String, value: '' },
     meta: String,
     score: Number,
     tone: { type: String, value: '' },

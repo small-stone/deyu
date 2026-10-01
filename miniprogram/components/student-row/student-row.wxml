@@ -1,5 +1,5 @@
 <view class="list-item" bindtap="onTap">
-  <view class="avatar {{tone}}">{{name[0]}}</view>
+  <view class="avatar {{tone}} {{avatar ? 'full' : ''}}">{{avatar || name[0]}}</view>
   <view class="mid">
     <view class="name">{{name}}</view>
     <view class="meta-t" wx:if="{{meta}}">{{meta}}</view>

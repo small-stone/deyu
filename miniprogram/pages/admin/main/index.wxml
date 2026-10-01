@@ -1,10 +1,10 @@
 <view class="shell">
   <view class="body">
     <view hidden="{{tab !== 'overview'}}" wx:if="{{visited.overview}}">
-      <admin-overview active="{{tab === 'overview'}}" bind:switchtab="onSwitchTab" />
+      <admin-overview id="admin-overview" active="{{tab === 'overview'}}" bind:switchtab="onSwitchTab" />
     </view>
     <view hidden="{{tab !== 'rank'}}" wx:if="{{visited.rank}}">
-      <admin-rank active="{{tab === 'rank'}}" />
+      <admin-rank id="admin-rank" active="{{tab === 'rank'}}" />
     </view>
     <view hidden="{{tab !== 'classes'}}" wx:if="{{visited.classes}}">
       <admin-classes active="{{tab === 'classes'}}" />

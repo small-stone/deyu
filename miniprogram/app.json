@@ -8,6 +8,7 @@
     "pages/teacher/main/index",
     "pages/teacher/score/index",
     "pages/teacher/board/index",
+    "pages/common/student-detail/index",
     "pages/admin/main/index"
   ],
   "window": {

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "学生详情",
+  "usingComponents": {
+    "timeline-list": "/components/timeline-list/timeline-list"
+  }
+}

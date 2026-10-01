@@ -4,7 +4,6 @@
       <view class="nav-title">全校排名</view>
       <view class="sub">{{school.yearLabel}} · {{school.classCount}} 个班 · {{school.studentCount}} 人</view>
     </view>
-    <view class="avatar gold">管</view>
   </view>
 
   <view class="seg">
@@ -39,11 +38,11 @@
   </view>
 
   <view class="card">
-    <view class="rank-row" wx:for="{{list}}" wx:key="name">
+    <view class="rank-row" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" data-kind="{{item.kind}}" bindtap="openRow">
       <view class="medal {{item.rank === 1 ? 'm1' : (item.rank === 2 ? 'm2' : (item.rank === 3 ? 'm3' : ''))}}">{{item.rank}}</view>
       <view class="bar-wrap">
-        <view class="nm"><text>{{item.name}}</text><strong>{{item.score}}</strong></view>
-        <view class="bar"><view class="fill" style="width: {{item.width}}%"></view></view>
+        <view class="nm"><text>{{item.name}}</text><strong class="{{item.low ? 'lo' : ''}}">{{item.score}}</strong></view>
+        <view class="bar"><view class="fill {{item.low ? 'low' : ''}}" style="width: {{item.width}}%"></view></view>
       </view>
     </view>
   </view>

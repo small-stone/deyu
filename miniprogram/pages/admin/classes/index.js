@@ -13,7 +13,7 @@ Page({
 
   openClass(e) {
     const id = e.currentTarget.dataset.id;
-    store.getState().currentClassId = id;
-    wx.navigateTo({ url: '/pages/teacher/board/index?preview=1' });
+    if (!id) return;
+    wx.navigateTo({ url: `/pages/teacher/board/index?preview=1&classId=${id}` });
   },
 });

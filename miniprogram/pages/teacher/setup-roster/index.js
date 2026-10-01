@@ -21,11 +21,11 @@ Page({
   importDemo() {
     store.seedRosterForCurrentClass();
     wx.showToast({ title: '导入成功', icon: 'success' });
-    setTimeout(() => wx.reLaunch({ url: '/pages/teacher/main/index' }), 400);
+    setTimeout(() => app.openPage('/pages/teacher/main/index'), 400);
   },
 
   skip() {
     store.skipRoster();
-    wx.reLaunch({ url: '/pages/teacher/main/index' });
+    app.openPage('/pages/teacher/main/index');
   },
 });

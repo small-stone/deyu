@@ -11,6 +11,7 @@
       wx:for="{{classes}}"
       wx:key="id"
       name="{{item.name}}"
+      avatar="{{item.name}}"
       meta="{{item.teacherName}} · 均分 {{item.avg}}"
       showHl="{{true}}"
       high="{{item.high}}"

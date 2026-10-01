@@ -20,36 +20,56 @@ App({
     return this.globalData.currentRole;
   },
 
+  // Keep welcome in the stack so leaving and returning do not restart the app.
+  openPage(url) {
+    const route = url.replace(/^\//, '').split('?')[0];
+    const pages = getCurrentPages();
+    const index = pages.findIndex((page) => page.route === route);
+    if (index >= 0) {
+      const delta = pages.length - 1 - index;
+      if (delta > 0) wx.navigateBack({ delta });
+      return;
+    }
+    if (route === 'pages/welcome/index') {
+      wx.redirectTo({ url });
+      return;
+    }
+    wx.navigateTo({
+      url,
+      fail: () => wx.redirectTo({ url }),
+    });
+  },
+
   enterParent() {
     this.setRole('parent');
-    wx.reLaunch({ url: '/pages/parent/main/index' });
+    this.openPage('/pages/parent/main/index');
   },
 
   enterTeacher() {
     this.setRole('teacher');
     const state = store.getState();
     if (state.teacherMode === 'empty' && !state.currentClassId) {
-      wx.reLaunch({ url: '/pages/teacher/setup-class/index' });
+      this.openPage('/pages/teacher/setup-class/index');
       return;
     }
     if (state.teacherMode === 'empty' && state.currentClassId) {
       const count = store.getStudentsByClass(state.currentClassId).length;
       if (count === 0) {
-        wx.reLaunch({ url: '/pages/teacher/setup-roster/index' });
+        this.openPage('/pages/teacher/setup-roster/index');
         return;
       }
     }
-    wx.reLaunch({ url: '/pages/teacher/main/index' });
+    this.openPage('/pages/teacher/main/index');
   },
 
   enterAdmin() {
     this.setRole('admin');
-    wx.reLaunch({ url: '/pages/admin/main/index' });
+    this.openPage('/pages/admin/main/index');
   },
 
   switchRole() {
     this.clearRole();
-    wx.reLaunch({ url: '/pages/welcome/index' });
+    this.openPage('/pages/welcome/index');
   },
 
   resetTeacherEmptyDemo() {

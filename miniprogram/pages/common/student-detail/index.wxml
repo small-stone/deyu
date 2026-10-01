@@ -1,0 +1,18 @@
+<view class="page no-tab" wx:if="{{missing}}">
+  <view class="card empty">未找到该学生</view>
+</view>
+<view class="page no-tab" wx:elif="{{student}}">
+  <view class="card head">
+    <view class="avatar">{{student.name[0]}}</view>
+    <view class="mid">
+      <view class="name">{{student.name}}</view>
+      <view class="meta-t">{{className}} · 学号 {{studentNo}}</view>
+    </view>
+    <view class="score-big {{low ? 'lo' : ''}}">{{score}}</view>
+  </view>
+
+  <view class="section-h">
+    <view class="section-title">加减分记录</view>
+  </view>
+  <timeline-list items="{{logs}}" />
+</view>

@@ -457,6 +457,10 @@
   font-weight: 700;
 }
 
+.bar-wrap .nm strong.lo {
+  color: var(--coral);
+}
+
 .bar {
   height: 12rpx;
   background: var(--brand-mist);
@@ -468,6 +472,10 @@
   height: 100%;
   background: var(--brand);
   border-radius: 999rpx;
+}
+
+.bar .fill.low {
+  background: var(--coral);
 }
 
 .hl-pair {

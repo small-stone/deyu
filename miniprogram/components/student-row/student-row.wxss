@@ -24,6 +24,11 @@
   flex-shrink: 0;
 }
 
+.avatar.full {
+  font-size: 22rpx;
+  letter-spacing: -1rpx;
+}
+
 .avatar.coral { background: #FCEBE6; color: #E07A5F; }
 .avatar.gold { background: #FBF3DC; color: #D4A017; }
 .avatar.sky { background: #E8F3F6; color: #4A90A4; }
